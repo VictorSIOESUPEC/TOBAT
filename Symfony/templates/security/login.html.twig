@@ -3,7 +3,7 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
+<form method="post" class="col-6 mx-auto">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -14,11 +14,11 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputUsername" class="sr-only">Username</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <h1 class="text-primary my-2 mx-auto">Connexion à TOBAT</h1>
+    <label for="inputUsername" class="my-2">Login</label>
+    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control border-dark my-2"  required autofocus>
+    <label for="inputPassword" class="my-2">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control border-dark my-2"  required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -35,8 +35,8 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+    <button class="btn btn-primary my-2 justify-content-center" type="submit">
+        Valider
     </button>
 </form>
 {% endblock %}
