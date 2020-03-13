@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bateau{% endblock %}
+
+{% block body %}
+    <h1>Bateau</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bateau.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ bateau.nom }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ bateau.photo }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ bateau.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bateau_index') }}">back to list</a>
+
+    <a href="{{ path('bateau_edit', {'id': bateau.id}) }}">edit</a>
+
+    {{ include('bateau/_delete_form.html.twig') }}
+{% endblock %}
