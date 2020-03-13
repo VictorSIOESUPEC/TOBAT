@@ -16,7 +16,6 @@ class ClientType extends AbstractType
             ->add('prenom')
             ->add('mail')
             ->add('telephone')
-            ->add('codeVIP')
             ->add('visites')
         ;
     }
